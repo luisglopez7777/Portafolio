@@ -1,0 +1,103 @@
+body{
+    margin: 0;
+    font-family: 'Muli', sans-serif;
+    background: rgb(42, 42, 42)
+}
+.header__menu{
+    color: red;
+    padding-left: 10px;
+}
+.structure{
+    background: rgb(42, 42, 42);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+}
+.structure__container{
+    color: white;
+    width: 40%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+.carousel{
+    width: 100%;
+    overflow: scroll;
+    padding-left: 0px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.carousel__container{
+    transition: 450ms -webkit-transform;
+    transition: 450ms transform;
+    transition: 450ms transform, 450ms -webkit-transform;
+    font-size: 0;
+    white-space: nowrap;
+    margin: 70px 0px;
+    padding-bottom: 10px;    
+}
+.carousel-item{
+    width: 150px;
+    height: 200px;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-right: 10px;
+    display: inline-block;
+    cursor: pointer;
+    transition: 450ms all;
+    transform-origin: center left;
+    position: relative;
+    font-size: 20px;
+}
+.carousel-item:hover ~ .carousel-item{
+    transform: translate3d(100px,0,0);
+}
+.carousel__container:hover .carousel-item{
+    opacity: .3;
+}
+.carousel__container:hover .carousel-item:hover{
+    transform: scale(1.33);
+    opacity: 1;
+}
+.carousel-item img{
+    width: 150px;
+    height: 200px;
+    object-fit: cover;
+}
+
+@media (max-width: 1100px){
+    .structure__container{
+        width: 75%;
+        justify-content: space-around;
+    }
+    .carousel__container{
+        white-space: pre-line;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+    }
+    .carousel{
+        height: 1500px;
+        overflow: unset;
+    }
+    .carousel-item{
+        width: 150px;
+        height: 175px;
+        margin-top: 10px;
+        margin-right: 0px;
+        transform-origin: center;
+        font-size: 0px;
+    }
+    .carousel-item:hover ~ .carousel-item{
+        transform: translate3d(0,50px,0);
+    }
+    .carousel-item img{
+        width: 150px;
+        height: 175px;
+        object-fit: cover;
+    }
+}
