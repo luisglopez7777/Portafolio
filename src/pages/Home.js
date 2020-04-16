@@ -1,4 +1,5 @@
 import React from 'react'
+import Modal from 'react-modal'
 
 import '../global.css'
 
@@ -12,8 +13,8 @@ import YourJuan from '../images/yourjuan.png'
 
 
 
-
 class Home extends React.Component {
+    
       render () {
           return(
         <React.Fragment>
