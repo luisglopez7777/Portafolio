@@ -1,5 +1,4 @@
 import React from 'react'
-import Modal from 'react-modal'
 
 import '../global.css'
 
@@ -11,10 +10,25 @@ import LuisSays from '../images/luisSays.png'
 import Platzi from '../images/platzi.png'
 import YourJuan from '../images/yourjuan.png'
 
+import ModalContainer from '../components/ModalContainer'
 
 
-class Home extends React.Component {
-    
+class Home extends React.Component {    
+    state = {
+        modalIsOpen: false
+    }
+    handleCloseModal = e => {
+        this.setState({
+            modalIsOpen: false
+        })
+    }
+
+    handleOpenModal = e => {
+        this.setState({
+            modalIsOpen: true
+        })
+    }
+
       render () {
           return(
         <React.Fragment>
@@ -33,8 +47,12 @@ class Home extends React.Component {
                 <div className="carousel__container">
                     
 
-                    <div className="carousel-item">
+                    <div className="carousel-item" onClick={this.handleOpenModal}>
                         <img src={Britania} alt="logo" className="carousel-item__img"/>
+                        <ModalContainer
+                        onCloseModal={this.handleCloseModal}
+                        onOpenModal={this.handleOpenModal}
+                        modalIsOpen={this.state.modalIsOpen}/>
                     </div>  
 
                     <div className="carousel-item">
@@ -70,7 +88,7 @@ class Home extends React.Component {
             </div>
         </React.Fragment>
           )
-      }
+          }
 }
 
   export default Home
