@@ -3,7 +3,10 @@ import ReactDOM from 'react-dom'
 import './styles/Modal.css'
 
 function Modal(props){
-    if(!props.isOpen){
+
+    const { isOpen, onClose, children} = props
+
+    if(!isOpen){
         return null
     }
     return ReactDOM.createPortal(
@@ -11,12 +14,14 @@ function Modal(props){
             <div className="Modal__container">
                 <button 
                     className="Modal__close-button"
-                    onClick={props.onCloseModal}>
+                    onClick={onClose}>
                         X
                 </button>
-                {props.children}
+                <img src={children} alt='img' />
             </div>
-        </div>, document.getElementById('modal')
+        </div>, 
+        document.body
+        // document.getElementById('modal')
     )
 }
 

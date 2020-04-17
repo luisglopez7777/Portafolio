@@ -10,24 +10,22 @@ import LuisSays from '../images/luisSays.png'
 import Platzi from '../images/platzi.png'
 import YourJuan from '../images/yourjuan.png'
 
-import ModalContainer from '../components/ModalContainer'
+// import ModalContainer from '../components/ModalContainer'
+import Modal from '../components/Modal'
 
 
-class Home extends React.Component {    
-    state = {
-        modalIsOpen: false
-    }
-    handleCloseModal = e => {
-        this.setState({
-            modalIsOpen: false
-        })
-    }
+class Home extends React.Component { 
+    constructor(props){
+        super(props)
+        this.state = {
+            isOpen: false,
+            children: ''
+        }
+    }   
+    handleOnOpen = imagen => this.setState({isOpen: true, children: imagen})
 
-    handleOpenModal = e => {
-        this.setState({
-            modalIsOpen: true
-        })
-    }
+    handleOnClose = () => this.setState({isOpen: false})
+
 
       render () {
           return(
@@ -47,15 +45,11 @@ class Home extends React.Component {
                 <div className="carousel__container">
                     
 
-                    <div className="carousel-item" onClick={this.handleOpenModal}>
+                    <div className="carousel-item" onClick={ () => this.handleOnOpen(Britania)}>
                         <img src={Britania} alt="logo" className="carousel-item__img"/>
-                        <ModalContainer
-                        onCloseModal={this.handleCloseModal}
-                        onOpenModal={this.handleOpenModal}
-                        modalIsOpen={this.state.modalIsOpen}/>
                     </div>  
 
-                    <div className="carousel-item">
+                    <div className="carousel-item" onClick={ () => this.handleOnOpen(Casi90)} >
                         <img src={Casi90} alt="logo" className="carousel-item__img"/>
                     </div>
 
@@ -86,9 +80,10 @@ class Home extends React.Component {
                     </div>
                 </div>
             </div>
+            <Modal isOpen={this.state.isOpen} onClose={this.handleOnClose} children={this.state.children}/>
         </React.Fragment>
           )
-          }
+        }
 }
 
   export default Home

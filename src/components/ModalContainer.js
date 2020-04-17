@@ -4,7 +4,10 @@ import Modal from './Modal'
 function ModalContainer(props){
     return(
             <Modal isOpen={props.modalIsOpen} onClose={props.onCloseModal}>
-                Lorem Ipsum
+                <div>
+                    <h1>Lorem Ipsum</h1>
+                    <p>Informacion</p>
+                </div>
             </ Modal>
         )
 }
