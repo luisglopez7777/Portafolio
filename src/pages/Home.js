@@ -58,13 +58,13 @@ class Home extends React.Component {
                     </div>
 
                     <div className="carousel-item">
-                        <a href="https://www.linkedin.com/in/luis-gerardo-l%C3%B3pez-a92726107/" target="_blank">
+                        <a href="https://www.linkedin.com/in/luis-gerardo-l%C3%B3pez-a92726107/" target="_new">
                             <img src={Linkedin} alt="logo" className="carousel-item__img"/>
                         </a>
                     </div>
 
                     <div className="carousel-item">
-                        <a href="https://luisglopez7777.github.io/luisSays/" target="_blank">
+                        <a href="https://luisglopez7777.github.io/luisSays/" target="_new">
                             <img src={LuisSays} alt="logo" className="carousel-item__img"/>
                             </a>                   
                     </div>
@@ -74,7 +74,7 @@ class Home extends React.Component {
                     </div>
 
                     <div className="carousel-item">
-                        <a href="https://www.yourjuaninmexico.com/" target="_blank">
+                        <a href="https://www.yourjuaninmexico.com/" target="_new">
                             <img src={YourJuan} alt="logo" className="carousel-item__img"/>
                         </a>
                     </div>

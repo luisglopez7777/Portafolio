@@ -21,7 +21,7 @@ function Modal(props){
             </div>
         </div>, 
         document.body
-        // document.getElementById('modal')
+            // document.getElementById('modal')
     )
 }
 
