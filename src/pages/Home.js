@@ -49,7 +49,7 @@ class Home extends React.Component {
                         <Modal 
                             isOpen={this.state.isOpen} 
                             onClose={this.handleOnClose} 
-                            children={this.state.children} >
+                             >
                             <h2>Titulo del proyecto</h2>
                             <p>Descripcion</p>
                         </ Modal>
