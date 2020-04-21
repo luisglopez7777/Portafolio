@@ -17,7 +17,7 @@ function Modal(props){
                     onClick={onClose}>
                         X
                 </button>
-                <img src={children} alt='img' />
+                {children} 
             </div>
         </div>, 
         document.body

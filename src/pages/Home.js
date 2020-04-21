@@ -19,10 +19,9 @@ class Home extends React.Component {
         super(props)
         this.state = {
             isOpen: false,
-            children: ''
         }
     }   
-    handleOnOpen = imagen => this.setState({isOpen: true, children: imagen})
+    handleOnOpen = () => this.setState({isOpen: true})
 
     handleOnClose = () => this.setState({isOpen: false})
 
@@ -45,11 +44,20 @@ class Home extends React.Component {
                 <div className="carousel__container">
                     
 
-                    <div className="carousel-item" onClick={ () => this.handleOnOpen(Britania)}>
-                        <img src={Britania} alt="logo" className="carousel-item__img"/>
+                    <div className="carousel-item" onClick={ () => this.handleOnOpen()}>
+                        <img src={Britania} alt="logo" className="carousel-item__img"/>  
+                        <Modal 
+                            isOpen={this.state.isOpen} 
+                            onClose={this.handleOnClose} 
+                            children={this.state.children} >
+                            <h2>Titulo del proyecto</h2>
+                            <p>Descripcion</p>
+                        </ Modal>
+      
                     </div>  
 
                     <div className="carousel-item" onClick={ () => this.handleOnOpen(Casi90)} >
+                        {/* <Modal isOpen={this.state.isOpen} onClose={this.handleOnClose} children={this.state.children}/> */}
                         <img src={Casi90} alt="logo" className="carousel-item__img"/>
                     </div>
 
@@ -80,7 +88,7 @@ class Home extends React.Component {
                     </div>
                 </div>
             </div>
-            <Modal isOpen={this.state.isOpen} onClose={this.handleOnClose} children={this.state.children}/>
+            {/* <Modal isOpen={this.state.isOpen} onClose={this.handleOnClose} */}
         </React.Fragment>
           )
         }
